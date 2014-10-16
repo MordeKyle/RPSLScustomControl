@@ -1,0 +1,17 @@
+***CHANGE LOG***
+
+Version: 0.1.1 - Adding Basic Projects
+10/16/2014 @ 18:58
+•Added gameLib
+	-class library
+		+no code
+•Added RPSLS_base_WPF
+	-basic WPF version of the game
+		+no code
+
+Version: 0.1 - Initial Commit
+10/16/2014 @ 18:36
+•Creating Repo
+•Added RPSLSconsole
+	-basic console version of game
+		+no code
