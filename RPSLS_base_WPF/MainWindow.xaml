@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="22" Margin="10,10,0,0" Name="smallBtn" Click="smallBtn_Click"/>
+        <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="47" Margin="10,37,0,0" Name="mediumBtn" FontSize="24" Click="mediumBtn_Click"/>
+        <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="72" Margin="10,89,0,0" Name="largeBtn" FontSize="36" Click="largeBtn_Click"/>
+        <Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="22" Margin="312,68,0,0" Name="testBtn"/>
+
     </Grid>
 </Window>
