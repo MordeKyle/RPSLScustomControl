@@ -24,5 +24,26 @@ namespace RPSLS_base_WPF
         {
             InitializeComponent();
         }
+
+        private void smallBtn_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 22;
+            testBtn.Width = 75;
+            testBtn.FontSize = 12;
+        }
+
+        private void mediumBtn_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 47;
+            testBtn.Width = 100;
+            testBtn.FontSize = 24;
+        }
+
+        private void largeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 72;
+            testBtn.Width = 125;
+            testBtn.FontSize = 36;
+        }
     }
 }
