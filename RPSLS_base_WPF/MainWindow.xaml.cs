@@ -45,5 +45,27 @@ namespace RPSLS_base_WPF
             testBtn.Width = 125;
             testBtn.FontSize = 36;
         }
+
+        // new buttons of the same size that has the same effect as above
+        private void btn_sm_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 22;
+            testBtn.Width = 75;
+            testBtn.FontSize = 12;
+        }
+
+        private void btn_md_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 47;
+            testBtn.Width = 100;
+            testBtn.FontSize = 24;
+        }
+
+        private void btn_lg_Click(object sender, RoutedEventArgs e)
+        {
+            testBtn.Height = 72;
+            testBtn.Width = 125;
+            testBtn.FontSize = 36;
+        }
     }
 }

@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
         <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="22" Margin="10,10,0,0" Name="smallBtn" Click="smallBtn_Click"/>
         <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="47" Margin="10,37,0,0" Name="mediumBtn" FontSize="24" Click="mediumBtn_Click"/>
         <Button Content="A" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="72" Margin="10,89,0,0" Name="largeBtn" FontSize="36" Click="largeBtn_Click"/>
-        <Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="22" Margin="312,68,0,0" Name="testBtn"/>
+        <Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="22" Margin="312,68,0,0" Name="testBtn" Grid.ColumnSpan="2"/>
+        <Button Content="SM" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="22" Margin="35,227,0,0" x:Name="btn_sm" Click="btn_sm_Click"/>
+        <Button Content="MD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="22" Margin="87,227,0,0" x:Name="btn_md" Click="btn_md_Click" RenderTransformOrigin="3.897,10.646"/>
+        <Button Content="LG" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="22" Margin="137,227,0,0" x:Name="btn_lg" Click="btn_lg_Click"/>
 
     </Grid>
 </Window>
