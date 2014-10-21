@@ -71,15 +71,16 @@ namespace gameLib
         }
 
         //determine outcome of the game
-        //TODO: Make this work with Rock Paper Scissors Lizard Spock
         public int determineOutcome()
         {
             int m_result;
-            int[,] selection = new int[3, 3]
+            int[,] selection = new int[5, 5]
             {
-                {(int)Outcome.Draw,(int)Outcome.Lose,(int)Outcome.Win},
-                {(int)Outcome.Win,(int)Outcome.Draw,(int)Outcome.Lose},
-                {(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Draw}
+                {(int)Outcome.Draw,(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Win,(int)Outcome.Lose},
+                {(int)Outcome.Win,(int)Outcome.Draw,(int)Outcome.Lose,(int)Outcome.Lose,(int)Outcome.Win},
+                {(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Draw,(int)Outcome.Win,(int)Outcome.Lose},
+                {(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Draw,(int)Outcome.Win},
+                {(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Draw}
             };
             m_result = selection[PlayerChoice, ComputerChoice];
             return m_result;
