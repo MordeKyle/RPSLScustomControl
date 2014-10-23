@@ -25,13 +25,24 @@ namespace RPSLSconsole
                 userChoice = determineChoice(userInput);
                 switch (userChoice)
                 {
-                    case 6:
+                    case 5: // user selects exit
+                        if (confirm() == true)
+                        {
+                            Environment.Exit(0);
+                        }
+                        break;
+                    case 6: // user inputs invalid input
                         Console.Clear();
                         Console.WriteLine("***Type the number that corresponds with your selection, then press enter.***\n");
                         break;
-                    default:
-                        /*TODO: This is where we would actually send the RPSLS class the userChoice and return a win, 
-                                lose, or draw. What would be the best way to do this?*/
+                    default: // user plays the game
+                        string m_result;
+                        string m_userInput;
+                        string m_computerChoice;
+                        m_result = RPSLS.playGame(userChoice);
+                        m_userInput = RPSLS.PlayerChoice;
+                        m_computerChoice = RPSLS.ComputerChoice;
+                        displayResults(m_userInput, m_computerChoice, m_result);
                         break;
                 }
             }
@@ -97,6 +108,15 @@ namespace RPSLSconsole
                     break;
             }
             return m_result;
+        }
+
+        static void displayResults(string m_userChoice, string m_computerChoice, string m_gameResult)
+        {
+            Console.Clear();
+            Console.WriteLine("You chose: " + m_userChoice);
+            Console.WriteLine("The computer Chose: " + m_computerChoice);
+            Console.WriteLine(m_gameResult);
+            Console.WriteLine("\n" + "\n");
         }
     }
 }
