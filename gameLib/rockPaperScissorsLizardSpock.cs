@@ -12,18 +12,26 @@ namespace gameLib
         public enum Outcome {Win = 10, Lose = 11, Draw = 12}
 
         private int playerChoice;
-        public int PlayerChoice
+        public string PlayerChoice
         {
-            get { return playerChoice; }
-            set { playerChoice = value; }
+            get { return displayUserChoice(playerChoice); }
         }
-
+        // following commented code was not working correctly. It did not assign a new random value each time the game was played:
         //generating random for computer's choice and outputting
-        private static readonly Random rand = new Random();
-        private int computerChoice = rand.Next(5);
-        public int ComputerChoice
+        //private static readonly Random rand = new Random();
+        //private int computerChoice = rand.Next(5);
+
+        private int computerChoice;
+        public string ComputerChoice
         {
-            get {return computerChoice;}
+            get {return displayComputerChoice(computerChoice);}
+        }
+        private int generateComputerInput()
+        {
+            int m_result;
+            Random rand = new Random();
+            m_result = rand.Next(5);
+            return m_result;
         }
 
         //assigning user's input to a real world value
@@ -31,6 +39,31 @@ namespace gameLib
         {
             string m_result = "";
             switch (m_userInput)
+            {
+                case (int)Choice.Rock:
+                    m_result = "ROCK";
+                    break;
+                case (int)Choice.Paper:
+                    m_result = "PAPER";
+                    break;
+                case (int)Choice.Scissors:
+                    m_result = "SCISSORS";
+                    break;
+                case (int)Choice.Lizard:
+                    m_result = "LIZARD";
+                    break;
+                case (int)Choice.Spock:
+                    m_result = "SPOCK";
+                    break;
+            }
+            return m_result;
+        }
+
+        //assigning computer's choice to real world value
+        public string displayComputerChoice(int m_computerChoice)
+        {
+            string m_result = "";
+            switch (m_computerChoice)
             {
                 case (int)Choice.Rock:
                     m_result = "ROCK";
@@ -71,7 +104,7 @@ namespace gameLib
         }
 
         //determine outcome of the game
-        public int determineOutcome()
+        public int determineOutcome(int m_playerChoice, int m_computerChoice)
         {
             int m_result;
             int[,] selection = new int[5, 5]
@@ -82,9 +115,21 @@ namespace gameLib
                 {(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Draw,(int)Outcome.Win},
                 {(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Win,(int)Outcome.Lose,(int)Outcome.Draw}
             };
-            m_result = selection[PlayerChoice, ComputerChoice];
+            m_result = selection[m_playerChoice, m_computerChoice];
+            playerChoice = m_playerChoice;
             return m_result;
         }
+        public string playGame(int m_playerChoice)
+        {
+            //string m_playerChoiceOut;
+            string m_resultOut;
+            int m_resultHolder;
+            int m_computerInput = generateComputerInput(); //generate a new random each time game is played.
+            m_resultHolder = determineOutcome(m_playerChoice, m_computerInput); //find win, lose, or draw
+            m_resultOut = displayResult(m_resultHolder); //assign a real world value to game result value
+            computerChoice = m_computerInput; //holds the computer input on a class level to be converted to real world value
+            return m_resultOut;
 
+        }
     }
 }
